@@ -1,0 +1,19 @@
+{
+  "name": "p2ploanmanagementsystem",
+  "version": "1.0.0",
+  "description": "A portal to request for loans and grant loans based on your CIBIL score.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanscisingh/p2pLoanManagementWebApp.git"
+  },
+  "author": "Aman Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amanscisingh/p2pLoanManagementWebApp/issues"
+  },
+  "homepage": "https://github.com/amanscisingh/p2pLoanManagementWebApp#readme"
+}
