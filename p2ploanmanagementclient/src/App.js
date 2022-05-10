@@ -9,14 +9,7 @@ function responseGoogle(response) {
 function App() {
   return (
     <div className="App">
-
-        <GoogleLogin
-            clientId="730881350107-k8rtdsdjmj4ms5q74j50aprlaqmfps8i.apps.googleusercontent.com"
-            buttonText="Login With Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-        />
+      hiii baby
     </div>
   );
 }
