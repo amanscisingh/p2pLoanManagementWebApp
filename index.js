@@ -4,11 +4,11 @@ const bodyParser = require('body-parser');
 require('dotenv').config({ path: './config/.env' })
 const cors = require('cors');
 
+const authenticate = require('./middleware/authenticate');
+
 const app = express();
 const URL = process.env.MONGODB_URI.toString();
 const PORT = process.env.PORT || 8500;
-
-
 
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log('Connected to MongoDB');
@@ -24,7 +24,8 @@ app.use(cors());
 app.get('/', (req, res,) => {
     res.send('Hello World');
 });
-app.use('/api', require('./routes/apiRoute'));
+app.use('/api', require('./routes/api'));
+app.use('/auth', require('./routes/auth'));
 
 app.use(function(req, res, next) {
     res.status(404);
