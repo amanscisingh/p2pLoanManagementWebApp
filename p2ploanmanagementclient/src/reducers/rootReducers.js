@@ -1,15 +1,15 @@
 const initState = {
     loginInfo: {
-        isloggedIn: false,
+        isloggedIn: true,
         accesstoken: '',
         refreshToken: '',
         errorMessage: ''
     },
     userInfo: {
-        name: '',
+        name: 'Aman Singh',
         email: '',
         password: '',
-        photo: '',
+        photo: 'https://lh3.googleusercontent.com/a-/AOh14GhM9pnIzKnvUrfBXFlCn3jNP7qNpJA08bedkyHwew=s360-p-rw-no',
         _id: '',
         isAccountComplete: false,
         cibilScore: '',
@@ -42,6 +42,12 @@ const initState = {
         }
     },
     loans: [],
+    appControls: {
+        isSyncing: false,
+        isLoading: false,
+        isError: false,
+        controllerMode: 'approve', // approve, apply, profile
+    }
 }
 
 
@@ -62,6 +68,33 @@ const rootReducer = (state=initState, action) => {
                 userInfo: {
                     ...state.userInfo,
                     password: action.payload
+                }
+            }
+
+        case 'TOGGLE_CONTROLLER_MODE_APPROVE':
+            return {
+                ...state,
+                appControls: {
+                    ...state.appControls,
+                    controllerMode: 'approve'
+                }
+            }
+
+        case 'TOGGLE_CONTROLLER_MODE_PROFILE':
+            return {
+                ...state,
+                appControls: {
+                    ...state.appControls,
+                    controllerMode: 'profile'
+                }
+            }
+
+        case 'TOGGLE_CONTROLLER_MODE_APPLY':
+            return {
+                ...state,
+                appControls: {
+                    ...state.appControls,
+                    controllerMode: 'apply'
                 }
             }
 

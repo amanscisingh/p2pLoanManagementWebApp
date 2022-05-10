@@ -1,8 +1,15 @@
 import React from 'react'
+import Controller from './Dashboard/Controller'
+import Header from './Dashboard/Header'
+import Loans from './Dashboard/Loans'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className='container'>
+        <Header />
+        <Controller />
+        <Loans />
+    </div>
   )
 }
 

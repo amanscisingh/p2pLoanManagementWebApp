@@ -9,7 +9,6 @@ function App() {
   const loginInfo = useSelector(state => state.loginInfo);
   const userInfo = useSelector(state => state.userInfo);
   const isloggedIn = loginInfo.isloggedIn;
-  const isRegistered = userInfo.email !== '';
 
   const [isLoginView, setIsLoginView] = useState(true);
 
