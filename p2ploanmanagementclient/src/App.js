@@ -17,7 +17,8 @@ function App() {
     <div className="App">
       { isloggedIn ? <Dashboard />  : isLoginView ? <Login /> : <Register /> }
 
-      <button onClick={ () => setIsLoginView(!isLoginView) }>Toggle Login/Register</button>
+      { isloggedIn ? "" : <button onClick={ () => setIsLoginView(!isLoginView) }>Toggle Login/Register</button> }
+      
     </div>
   );
 }
