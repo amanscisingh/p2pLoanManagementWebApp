@@ -1,15 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import GoogleLogin from 'react-google-login';
-
-function responseGoogle(response) {
-  console.log(response);
-}
+import Login from './components/Login';
+import { useDispatch, useSelector } from 'react-redux';
+import Register from './components/Register';
+import Dashboard from './components/Dashboard';
+import {useState} from 'react';
 
 function App() {
+  const loginInfo = useSelector(state => state.loginInfo);
+  const userInfo = useSelector(state => state.userInfo);
+  const isloggedIn = loginInfo.isloggedIn;
+  const isRegistered = userInfo.email !== '';
+
+  const [isLoginView, setIsLoginView] = useState(true);
+
   return (
     <div className="App">
-      hiii baby
+      { isloggedIn ? <Dashboard />  : isLoginView ? <Login /> : <Register /> }
+
+      <button onClick={ () => setIsLoginView(!isLoginView) }>Toggle Login/Register</button>
     </div>
   );
 }
