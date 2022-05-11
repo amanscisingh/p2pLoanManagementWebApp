@@ -35,11 +35,20 @@ const Login = () => {
         <br />
         <button onClick={
             () => {
-                const userData = {
-                    email: userInfo.email,
-                    password: userInfo.password
+                if (userInfo.email < 3) {
+                    alert('Email must be at least 3 characters long');
+                } else if( userInfo.email.includes('@') === false ) {
+                    alert('Email must contain @');
+                } else if( userInfo.password < 3 ) {
+                    alert('Password must be at least 3 characters long');
+                } else {
+                    const userData = {
+                        email: userInfo.email,
+                        password: userInfo.password
+                    }
+                    dispatch(loginUser(userData))
+            
                 }
-                dispatch(loginUser(userData))
             }
         }>Login</button>
     </div>

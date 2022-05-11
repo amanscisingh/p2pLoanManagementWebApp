@@ -12,6 +12,55 @@ const usersSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    bankDetails: {
+        bankName: {
+            type: String,
+        },
+        accountNumber: {
+            type: String,
+        },
+        ifscCode: {
+            type: String,
+        }
+    },
+    panDetails:{
+        panNo: {
+            type: String,
+        },
+        panImage: {
+            type: String,
+        }
+    },
+    adhaarDetails:{
+        adhaarNo: {
+            type: String,
+        },
+        adhaarImage: {
+            type: String,
+        }
+    },
+    salerySlips: [
+        {
+            amount: {
+                type: Number,
+            },
+            date: {
+                type: Date,
+                default: Date.now()
+            },
+            salerySlipImage: {
+                type: String,
+            }
+        }
+    ],
+    ctcInformation: {
+        ctc: {
+            type: Number,
+        },
+    },
+    generalQuestions: {
+        
     }
 }, 
 {
