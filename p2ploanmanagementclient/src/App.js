@@ -8,9 +8,18 @@ import {useState} from 'react';
 function App() {
   const loginInfo = useSelector(state => state.loginInfo);
   const userInfo = useSelector(state => state.userInfo);
+  const appControls = useSelector(state => state.appControls);
   const isloggedIn = loginInfo.isloggedIn;
+  const dispatch = useDispatch();
 
   const [isLoginView, setIsLoginView] = useState(true);
+
+  if(appControls.isError) {
+    alert(appControls.errorMessage);
+    dispatch({
+      type: 'CLEAR_ERROR_MESSAGE'
+    });
+  }
 
   return (
     <div className="App">

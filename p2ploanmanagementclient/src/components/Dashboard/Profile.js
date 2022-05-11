@@ -65,9 +65,100 @@ const Profile = () => {
         <br />
 
         <h3>CTC Information</h3>
-        <label htmlFor="ctc">CTC</label>
+        <label htmlFor="ctc">CTC (in Rs)</label>
         <input type="text" name="ctc" id="ctc" />
         <br />
+
+        <h3>Answers these questions to help us calculate CIBIL score...</h3>
+        <label htmlFor="question1">How regular are you on paying your bills on time? (rate on 1-10)</label>
+        <select name="answer1" id="answer1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <br />
+
+        <label htmlFor="question2">How regular are you on paying back your credit loans and EMIs? (rate on 1-10)</label>
+        <select name="answer2" id="answer2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <br />
+
+        <label htmlFor="question3">How many credit cards do you have? (a value between 1-4)</label>
+        <select name="answer3" id="answer3">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <br />
+
+        <label htmlFor="question4">For how long have you been using credit card? (a value between 1-20)</label>
+        <select name="answer4" id="answer4">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
+        <br />
+
+        <label htmlFor="question5">What percentage of credit limit you spend monthly? </label>
+        <select name="answer5" id="answer5">
+          <option value="10">10%</option>
+          <option value="20">20%</option> 
+          <option value="30">30%</option>
+          <option value="40">40%</option>
+          <option value="50">50%</option>
+          <option value="60">60%</option>
+          <option value="70">70%</option>
+          <option value="80">80%</option>
+          <option value="90">90%</option>
+          <option value="100">100%</option>
+
+        </select>
+        <br />
+
+        <label htmlFor="question6">Do you have any personal(home/gold/car loan)? (Yes/No)</label>
+        <select name="answer6" id="answer6">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <br />
+        <button>Update Answers</button>
+        
 
       </div>
     </div>

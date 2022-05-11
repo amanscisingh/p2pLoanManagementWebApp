@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../actions/apiActions';
 
 const Login = () => {
     const userInfo = useSelector(state => state.userInfo);
@@ -7,15 +8,16 @@ const Login = () => {
     const dispatch = useDispatch();
 
   return (
-    <div className='container'>
+    <div className='loginContainer'>
+        <h2>Login</h2>
+        <br />
+
         <label htmlFor="email">Please Enter email</label>
         <input type="email" name="email" value={userInfo.email} onChange={
             (e) => {
                 dispatch({
                     type: 'UPDATE_EMAIL',
-                    payload: {
-                        email: e.target.value
-                    }
+                    payload: e.target.value
                 })  
             }
         } />
@@ -25,12 +27,21 @@ const Login = () => {
             (e) => {
                 dispatch({
                     type: 'UPDATE_PASSWORD',
-                    payload: {
-                        password: e.target.value
-                    }
+                    payload: e.target.value
                 })  
             }
         } />
+
+        <br />
+        <button onClick={
+            () => {
+                const userData = {
+                    email: userInfo.email,
+                    password: userInfo.password
+                }
+                dispatch(loginUser(userData))
+            }
+        }>Login</button>
     </div>
   )
 }
